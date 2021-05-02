@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  commands:
+    app_server_rust_linter:
+      root: "app_server/"
+      files: git diff --name-only --cached
+      glob: "*.rs"
+      run: cargo clippy
+    app_frontend_typescript_compile:
+      root: "app_frontend/"
+      files: git diff --name-only --cached
+      glob: "*.{js,ts,vue}"
+      run: npm run compile
