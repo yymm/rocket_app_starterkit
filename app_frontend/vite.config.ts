@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import { resolve, join } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,10 +8,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index/index.html'),
-        login: resolve(__dirname, 'src/login/index.html')
+        main: resolve(__dirname, 'index.html'),
+        login: resolve(__dirname, 'login/index.html')
       }
-    }
+    },
+    outDir: '../app_server/static',
   }
 })
 
@@ -39,7 +40,7 @@ export default defineConfig({
 
 
 
-
+                                                                            
                                                                             
                                                                             
                                                                             
