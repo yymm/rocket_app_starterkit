@@ -9,7 +9,6 @@ extern crate diesel;
 extern crate diesel_migrations;
 #[macro_use]
 extern crate log;
-extern crate lazy_static;
 extern crate r2d2_redis;
 
 mod redis;
@@ -70,7 +69,7 @@ fn main() {
         .attach(MyDatabase::fairing())
         .attach(AdHoc::on_attach("Database Migrations", run_db_migrations))
         .manage(redis::pool(redis_url))
-        .manage(settings.clone())
+        .manage(settings)
         .mount(
             "/",
             StaticFiles::from(concat!(env!("CARGO_MANIFEST_DIR"), "/static")),
