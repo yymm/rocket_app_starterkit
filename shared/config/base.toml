@@ -1,0 +1,6 @@
+[redis]
+url = "redis://localhost:56379"
+notify_channel = "notify"
+
+[postgres]
+url = "postgres://postgres:example@localhost:55432/app_pg_db"

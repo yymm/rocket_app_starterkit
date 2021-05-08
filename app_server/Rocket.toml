@@ -1,6 +1,0 @@
-[global.databases.app_pg_db]
-url = "postgres://postgres:example@localhost:55432/app_pg_db"
-
-[global.databases.app_redis_db]
-url = "redis://127.0.0.1:56379"
-
